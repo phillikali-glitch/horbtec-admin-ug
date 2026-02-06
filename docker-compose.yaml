@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  php-service:
+    build: ./backend/php-service
+    ports:
+      - "8000:80"
+    volumes:
+      - ./data:/var/www/data
+  
+  node-api:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - php-service
+    environment:
+      - PHP_SERVICE_URL=http://php-service
+  
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node-api
