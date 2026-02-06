@@ -1,19 +1,16 @@
-# Clone the starter repository
-git clone https://github.com/yourusername/uganda-admin-exporter
-cd uganda-admin-exporter
-
-# Project structure
 uganda-admin-exporter/
-├── backend/                 # Node.js/Express backend
+├── backend/                 # Node.js API server
 │   ├── src/
-│   │   ├── datasources/    # Data fetching modules
+│   │   ├── datasources/    # Data fetching logic
 │   │   ├── routes/         # API endpoints
-│   │   └── utils/          # Excel export utilities
+│   │   └── utils/         # Excel export utilities
+│   ├── php-service/        # PHP data wrapper
 │   └── package.json
-├── frontend/               # React frontend
+├── frontend/               # React interface
 │   ├── src/
-│   │   ├── components/     # District selector, export button
-│   │   └── App.js
+│   │   ├── components/     # UI components
+│   │   └── App.js         # Main application
 │   └── package.json
 ├── data/                   # Cached data files
-└── docker-compose.yml      # Container setup
+├── docker-compose.yml      # Container orchestration
+└── README.md              # This file
